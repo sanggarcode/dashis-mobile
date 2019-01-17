@@ -14,6 +14,7 @@ class MainActivity : BaseActivity<MainPresenter>(), MainActivityView {
 
     override fun onCreated() {
         val uuid = intent.getStringExtra("uuid")
+        val token = intent.getStringExtra("token")
         presenter().getInsisses(uuid)
     }
 
