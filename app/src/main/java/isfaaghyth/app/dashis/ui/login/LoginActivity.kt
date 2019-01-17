@@ -12,8 +12,8 @@ import isfaaghyth.app.dashis.ui.main.MainActivity
 class LoginActivity : BaseActivity<LoginPresenter>(), LoginActivityView {
 
     private val dataManager = DataManager()
-    override fun presenter(): LoginPresenter = LoginPresenter(dataManager)
 
+    override fun presenter(): LoginPresenter = LoginPresenter(dataManager)
     override fun contentView(): Int = R.layout.activity_login
 
     override fun onCreated() {
@@ -32,6 +32,7 @@ class LoginActivity : BaseActivity<LoginPresenter>(), LoginActivityView {
         intent.putExtra("uuid", result.student.uuid)
         intent.putExtra("token", result.token)
         startActivity(intent)
+        finish()
     }
 
 }

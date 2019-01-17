@@ -14,8 +14,8 @@ import retrofit2.Response
  */
 class MainPresenter(val dataManager: DataManager): BasePresenter<MainActivityView>() {
 
-    fun getInsisses(uuid: String) {
-        routes().getInsis(uuid).enqueue(object : Callback<Insisses> {
+    fun getInsisses(uuid: String, token: String) {
+        routes().getInsis(uuid, token).enqueue(object : Callback<Insisses> {
             override fun onFailure(call: Call<Insisses>, t: Throwable) {
                 catchError(t)
             }
