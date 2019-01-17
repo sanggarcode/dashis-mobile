@@ -5,4 +5,5 @@ package isfaaghyth.app.dashis.data
  * github: @isfaaghyth
  */
 class DataManager {
+
 }
