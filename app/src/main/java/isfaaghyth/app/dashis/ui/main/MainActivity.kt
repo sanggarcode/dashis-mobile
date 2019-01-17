@@ -1,14 +1,18 @@
 package isfaaghyth.app.dashis.ui.main
 
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
-
 import isfaaghyth.app.dashis.R
+import isfaaghyth.app.dashis.base.BaseActivity
+import isfaaghyth.app.dashis.data.DataManager
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity<MainPresenter>() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    private val dataManager = DataManager()
+    override fun presenter(): MainPresenter = MainPresenter(dataManager)
+
+    override fun contentView(): Int = R.layout.activity_main
+
+    override fun onCreated() {
+
     }
+
 }

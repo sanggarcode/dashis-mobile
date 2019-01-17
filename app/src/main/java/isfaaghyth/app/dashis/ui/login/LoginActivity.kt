@@ -1,14 +1,18 @@
 package isfaaghyth.app.dashis.ui.login
 
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
-
 import isfaaghyth.app.dashis.R
+import isfaaghyth.app.dashis.base.BaseActivity
+import isfaaghyth.app.dashis.data.DataManager
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : BaseActivity<LoginPresenter>() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+    private val dataManager = DataManager()
+    override fun presenter(): LoginPresenter = LoginPresenter(dataManager)
+
+    override fun contentView(): Int = R.layout.activity_login
+
+    override fun onCreated() {
+
     }
+
 }

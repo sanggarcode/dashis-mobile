@@ -8,7 +8,7 @@ import isfaaghyth.app.dashis.network.Routes
  * Created by isfaaghyth on 17/01/19.
  * github: @isfaaghyth
  */
-class BasePresenter<V: BaseView>: BasePresenterInteractor<V> {
+open class BasePresenter<V: BaseView>: BasePresenterInteractor<V> {
 
     private lateinit var routes: Routes
     private lateinit var view: V
