@@ -10,11 +10,15 @@ import isfaaghyth.app.dashis.network.Routes
  */
 open class BasePresenter<V: BaseView>: BasePresenterInteractor<V> {
 
-    private lateinit var routes: Routes
+    private var routes: Routes
     private lateinit var view: V
 
     override fun view(): V = view
     protected fun routes(): Routes = routes
+
+    init {
+        routes = Network.services
+    }
 
     override fun finishRequest() {
         Log.d("TAG", "finishRequest()")
@@ -25,11 +29,11 @@ open class BasePresenter<V: BaseView>: BasePresenterInteractor<V> {
     }
 
     override fun attachView(view: V) {
-        routes = Network.services
+
     }
 
     override fun dettachView() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
 }
