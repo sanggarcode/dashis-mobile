@@ -18,6 +18,8 @@ class MainActivity : BaseActivity<MainPresenter>(), MainActivityView {
     override fun contentView(): Int = R.layout.activity_main
 
     override fun onCreated() {
+        presenter().attachView(this)
+
         val lstInsis = findViewById<RecyclerView>(R.id.lstInsis)
 
         lstInsis.layoutManager = LinearLayoutManager(this)

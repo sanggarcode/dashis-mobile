@@ -33,7 +33,7 @@ object Network {
                 .create()
 
         return Retrofit.Builder()
-                .baseUrl("http://10.0.10.0/")
+                .baseUrl("http://192.168.43.98:1337/")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 //.addCallAdapterFactory(RxJava2CallAdapterFactory.create())

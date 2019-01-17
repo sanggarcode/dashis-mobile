@@ -18,7 +18,6 @@ abstract class BaseActivity<out P: BasePresenter<*>> : AppCompatActivity(), Base
         super.onCreate(savedInstanceState)
         setContentView(contentView())
         presenter = presenter()
-
         onCreated()
     }
 

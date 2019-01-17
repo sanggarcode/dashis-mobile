@@ -17,6 +17,8 @@ class LoginActivity : BaseActivity<LoginPresenter>(), LoginActivityView {
     override fun contentView(): Int = R.layout.activity_login
 
     override fun onCreated() {
+        presenter().attachView(this)
+
         val edtEmail = findViewById<EditText>(R.id.edtEmail)
         val edtPassword = findViewById<EditText>(R.id.edtPassword)
 
