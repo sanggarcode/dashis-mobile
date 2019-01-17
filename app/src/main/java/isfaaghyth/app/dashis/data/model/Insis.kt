@@ -13,5 +13,5 @@ data class Insis(
 
 data class Insisses(
         val status: Int,
-        val value: Insis
+        val value: List<Insis>
 )

@@ -9,3 +9,9 @@ data class Student(
         val name: String,
         val email: String
 )
+
+data class StudentAuth(
+        val status: Int,
+        val student: Student,
+        val token: String
+)
