@@ -5,15 +5,14 @@ import android.widget.Button
 import android.widget.EditText
 import isfaaghyth.app.dashis.R
 import isfaaghyth.app.dashis.base.BaseActivity
-import isfaaghyth.app.dashis.data.DataManager
 import isfaaghyth.app.dashis.data.model.StudentAuth
 import isfaaghyth.app.dashis.ui.main.MainActivity
+import org.koin.android.ext.android.inject
 
 class LoginActivity : BaseActivity<LoginPresenter>(), LoginActivityView {
 
-    private val dataManager = DataManager()
-
-    override fun presenter(): LoginPresenter = LoginPresenter(dataManager)
+    private val presenter by inject<LoginPresenter>()
+    override fun presenter(): LoginPresenter = presenter
     override fun contentView(): Int = R.layout.activity_login
 
     override fun onCreated() {

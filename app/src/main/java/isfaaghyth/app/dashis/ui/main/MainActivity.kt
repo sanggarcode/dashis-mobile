@@ -7,14 +7,15 @@ import isfaaghyth.app.dashis.base.BaseActivity
 import isfaaghyth.app.dashis.data.DataManager
 import isfaaghyth.app.dashis.data.model.Insis
 import isfaaghyth.app.dashis.ui.adapter.InsisAdapter
+import org.koin.android.ext.android.inject
 
 class MainActivity : BaseActivity<MainPresenter>(), MainActivityView {
 
-    private val dataManager = DataManager()
     private val insisses = arrayListOf<Insis>()
     private val adapter = InsisAdapter(insisses)
 
-    override fun presenter(): MainPresenter = MainPresenter(dataManager)
+    private val presenter by inject<MainPresenter>()
+    override fun presenter(): MainPresenter = presenter
     override fun contentView(): Int = R.layout.activity_main
 
     override fun onCreated() {
