@@ -3,7 +3,7 @@ package isfaaghyth.app.dashis.network
 import isfaaghyth.app.dashis.data.model.Insisses
 import isfaaghyth.app.dashis.data.model.StudentAuth
 import retrofit2.Call
-import retrofit2.http.POST
+import retrofit2.http.*
 
 /**
  * Created by isfaaghyth on 17/01/19.
@@ -12,14 +12,16 @@ import retrofit2.http.POST
 interface Routes {
 
     @POST("api/v1/mahasiswa/auth")
+    @FormUrlEncoded
     fun studentAuth(
-            email: String,
-            password: String
+            @Field("email") email: String,
+            @Field("password") password: String
     ): Call<StudentAuth>
 
-    @POST("api/v1/insis/{uuid}")
+    @GET("api/v1/insis/{uuid}")
     fun getInsis(
-            uuid: String
+            @Path("uuid") uuid: String,
+            @Header("Authorization") token: String
     ): Call<Insisses>
 
 }
